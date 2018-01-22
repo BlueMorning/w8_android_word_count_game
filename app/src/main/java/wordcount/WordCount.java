@@ -12,16 +12,19 @@ public class WordCount {
 
     private String textToParse;
     private HashMap<String, Integer> resultWordCount;
+    private ArrayList<Word> resultWordSorted;
 
     public WordCount(){
 
-        this.textToParse = "";
-        this.resultWordCount = new HashMap<>();
+        this.textToParse        = "";
+        this.resultWordCount    = new HashMap<>();
+        this.resultWordSorted   = new ArrayList<>();
     }
 
     public HashMap<String, Integer> getResultWordCount(){
         return this.resultWordCount;
     }
+    public ArrayList<Word> getResultWordSorted() { return this.resultWordSorted;}
 
     public void setTextToParse(String textToParse){
 
@@ -37,7 +40,7 @@ public class WordCount {
 
         this.resultWordCount.clear();
 
-        String[] wordsFound = textToParse.toLowerCase().split(" ");
+        String[] wordsFound = textToParse.toLowerCase().split("\\s+");
 
         for(String word : wordsFound){
 
@@ -54,17 +57,17 @@ public class WordCount {
 
     public ArrayList<Word> sortWordByOccurency(){
 
-        ArrayList<Word> words = new ArrayList<>();
+        this.resultWordSorted.clear();
 
         for(String word : this.resultWordCount.keySet()){
-            words.add(new Word(word, this.resultWordCount.get(word)));
+            this.resultWordSorted.add(new Word(word, this.resultWordCount.get(word)));
         }
 
 
-        words.sort((w1, w2) -> w2.getCount()
+        this.resultWordSorted.sort((w1, w2) -> w2.getCount()
                 .compareTo(w1.getCount()));
 
-        return words;
+        return this.resultWordSorted;
     }
 
 }
