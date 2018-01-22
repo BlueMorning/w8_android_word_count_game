@@ -1,9 +1,9 @@
-package example.codeclan.com.wordcount;
+package example.codeclan.com.wordcountActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class WordCount extends AppCompatActivity {
+public class WordCountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

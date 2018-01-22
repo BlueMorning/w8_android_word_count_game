@@ -1,4 +1,4 @@
-package example.codeclan.com.wordcount;
+package example.codeclan.com.wordcountActivity;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
