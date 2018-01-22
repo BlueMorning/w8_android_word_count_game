@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import wordcount.Word;
 import wordcount.WordAdapter;
 import wordcount.WordCount;
@@ -42,6 +44,7 @@ public class WordCountActivity extends AppCompatActivity {
     protected void onClickClearTextAndResult(View buttonClear){
         editTextToAnalyse.setText("");
         textViewNbWordFound.setText("0");
+        listViewResult.setAdapter(new WordAdapter(this, new ArrayList<>()));
     }
 
 
